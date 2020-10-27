@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProductApp.Core.Entity\ProductApp.Core.Entity.csproj" />
+    <ProjectReference Include="..\ProductApp.Core\ProductApp.Core.csproj" />
+    <ProjectReference Include="..\ProductApp.Infrastructure.Data\ProductApp.Infrastructure.SQLLite.Data.csproj" />
+  </ItemGroup>
+
+
+</Project>
