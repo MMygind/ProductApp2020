@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using ProductApp.Core.ApplicationServices;
 using ProductApp.Core.Entity;
@@ -10,6 +11,7 @@ using ProductApp.Core.Entity;
 
 namespace ProductApp.RestAPI.Controllers
 {
+    [EnableCors("MyPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase

@@ -10,6 +10,5 @@ namespace ProductApp.Core.Entity
         public double Price { get; set; }
         public string Color { get; set; }
         public string Type { get; set; }
-        public DateTime CreatedDate { get; set; }
     }
 }

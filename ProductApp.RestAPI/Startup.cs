@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using ProductApp.Core.ApplicationServices;
 using ProductApp.Core.ApplicationServices.Services;
 using ProductApp.Core.DomainServices;
@@ -35,7 +36,18 @@ namespace ProductApp.RestAPI
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductRepository, ProductRepository>(); 
             services.AddTransient<IDBInitializer, DBInitializer>();
-            services.AddControllers();
+
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.WithOrigins("http://localhost:4200")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }));
+
+            services.AddControllers().AddNewtonsoftJson(o =>
+            {
+                o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +74,8 @@ namespace ProductApp.RestAPI
             app.UseAuthorization();
 
             app.UseAuthentication();
+
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {

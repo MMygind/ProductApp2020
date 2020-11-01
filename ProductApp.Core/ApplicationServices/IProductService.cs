@@ -11,7 +11,7 @@ namespace ProductApp.Core.ApplicationServices
         Product UpdateProduct(Product updateProduct);
         Product FindProductById(int id);
         Product DeleteProduct(int id);
-        Product NewProduct(string name, double price, string color, string type, DateTime createdDate);
+        Product NewProduct(string name, double price, string color, string type);
         Product CreateProduct(Product product);
     }
 }

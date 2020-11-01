@@ -17,8 +17,7 @@ namespace ProductApp.Infrastructure.SQLLite.Data
                 Name = "Hulk Hogan",
                 Price = 1500,
                 Color = "Yellow",
-                Type = "Wrestler",
-                CreatedDate = new DateTime(2019, 05, 05)
+                Type = "Wrestler"
             });
             ctx.SaveChanges();
         }

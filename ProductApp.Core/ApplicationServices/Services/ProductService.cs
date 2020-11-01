@@ -37,15 +37,14 @@ namespace ProductApp.Core.ApplicationServices.Services
             return _productRepo.Delete(id);
         }
 
-        public Product NewProduct(string name, double price, string color, string type, DateTime createdDate)
+        public Product NewProduct(string name, double price, string color, string type)
         {
             var product = new Product()
             {
                 Name = name,
                 Price = price,
                 Color = color,
-                Type = type,
-                CreatedDate = createdDate
+                Type = type
             };
             return product;
         }
