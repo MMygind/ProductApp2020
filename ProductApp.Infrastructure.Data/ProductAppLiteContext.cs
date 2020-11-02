@@ -9,5 +9,8 @@ namespace ProductApp.Infrastructure.SQLLite.Data
         public ProductAppLiteContext(DbContextOptions<ProductAppLiteContext> opt) : base(opt) { }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<User> Users { get; set; }
+
+        public DbSet<TodoItem> TodoItems { get; set; }
     }
 }
