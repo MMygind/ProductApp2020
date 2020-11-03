@@ -37,7 +37,6 @@ namespace ProductApp.Infrastructure.SQLLite.Data.Repositories
         public Product Update(Product updateProduct)
         {
             _ctx.Attach(updateProduct).State = EntityState.Modified;
-            _ctx.Entry(updateProduct).Reference(p => p.Name).IsModified = true;
             _ctx.SaveChanges();
             return updateProduct;
         }

@@ -37,6 +37,22 @@ namespace ProductApp.Infrastructure.SQLLite.Data
                 Type = "Wrestler"
             });
 
+            ctx.Products.Add(new Product()
+            {
+                Name = "John Cena",
+                Price = 1500,
+                Color = "Blue",
+                Type = "Wrestler"
+            });
+
+            ctx.Products.Add(new Product()
+            {
+                Name = "Sting",
+                Price = 1500,
+                Color = "Black",
+                Type = "Wrestler"
+            });
+
             List<TodoItem> items = new List<TodoItem>
             {
                 new TodoItem { IsComplete=true, Name="Make homework"},
