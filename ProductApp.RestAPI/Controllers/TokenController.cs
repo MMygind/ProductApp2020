@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using ProductApp.Core.DomainServices;
 using ProductApp.Core.Entity;
@@ -11,6 +12,7 @@ using ProductApp.Infrastructure.SQLLite.Data.Helpers;
 
 namespace ProductApp.RestAPI.Controllers
 {
+    [EnableCors("MyPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class TokenController : ControllerBase
