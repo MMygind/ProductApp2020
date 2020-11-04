@@ -10,5 +10,6 @@ namespace ProductApp.Core.Entity
         public double Price { get; set; }
         public string Color { get; set; }
         public string Type { get; set; }
+        public ProductType ProductType { get; set; }
     }
 }

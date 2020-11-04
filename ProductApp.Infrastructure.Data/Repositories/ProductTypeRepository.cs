@@ -17,7 +17,9 @@ namespace ProductApp.Infrastructure.SQLLite.Data.Repositories
 
         public ProductType Create(ProductType productType)
         {
-            var productTypeSaved = _ctx.ProductTypes.A
+            var productTypeSaved = _ctx.ProductTypes.Add(productType).Entity;
+            _ctx.SaveChanges();
+            return productTypeSaved;
         }
     }
 }
