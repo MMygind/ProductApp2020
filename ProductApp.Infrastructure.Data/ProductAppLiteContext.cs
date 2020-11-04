@@ -11,6 +11,7 @@ namespace ProductApp.Infrastructure.SQLLite.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<User> Users { get; set; }
 
+        public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<TodoItem> TodoItems { get; set; }
     }
 }
