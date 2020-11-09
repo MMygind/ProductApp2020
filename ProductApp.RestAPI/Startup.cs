@@ -47,7 +47,7 @@ namespace ProductApp.RestAPI
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader()
-                .WithOrigins("https://aiof-99d99.web.app/").AllowAnyMethod().AllowAnyHeader();
+                .WithOrigins("https://aiof-99d99.web.app").AllowAnyMethod().AllowAnyHeader();
             }));
 
             services.AddCors(options =>
